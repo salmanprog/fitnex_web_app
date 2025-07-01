@@ -1,0 +1,33 @@
+'use strict'
+
+import _ from 'lodash';
+
+class [MODEL]
+{
+  public static async initResponse(data:object,request:object)
+  {
+    if( _.isEmpty(data) )
+      return [];
+
+      let response;
+      if( Array.isArray(data) ){
+        response = []
+        for(var i=0; i < data.length; i++)
+        {
+          response.push( this.jsonSchema(data[i],request));
+        }
+      } else {
+        response = this.jsonSchema(data,request)
+      }
+      return response;
+  }
+
+  private static jsonSchema(record:object,request:object)
+  {
+      return {
+        id: record._id,
+      }
+  }
+
+}
+module.exports = [MODEL];

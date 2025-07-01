@@ -1,0 +1,30 @@
+import { DateTime } from 'luxon'
+import { column } from '@ioc:Adonis/Lucid/Orm'
+import RestModel from './RestModel'
+
+export default class [MODEL] extends RestModel {
+
+    @column({ isPrimary: true })
+    public id: number
+
+    @column()
+    public title: string
+
+    @column()
+    public slug: string
+
+    @column.dateTime({ autoCreate: true })
+    public created_at: DateTime
+
+    @column.dateTime({ autoCreate: true, autoUpdate: true })
+    public updated_at: DateTime
+
+    @column()
+    public deleted_at: DateTime | null
+
+    public static fillable()
+    {
+        return ['title','slug','created_at','updated_at','deleted_at']
+    }
+}
+module.exports = [MODEL];

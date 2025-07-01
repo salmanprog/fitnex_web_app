@@ -1,0 +1,63 @@
+@layout('admin/master')
+@section('content')
+  @section('stylesheets')
+    <link rel="stylesheet" href="/admin/assets/lib/datatables/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/admin/assets/lib/datatables/responsive.bootstrap.min.css">
+  @endsection
+  <section class="main-content">
+    <div class="row">
+        <div class="col-sm-12">
+            @include('admin/flash-message')
+            <div class="card">
+                <div class="card-header card-default">
+                    <div class="float-right">
+                      <a href="{{ route('admin.faq.create') }}" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Add Faq</a>
+                    </div>
+                    Faq Listing
+                </div>
+                <div class="card-body">
+                  <table id="datatable" class="table table-striped dt-responsive nowrap">
+                      <thead>
+                          <tr>
+                              <th><input type="checkbox" class="checked_all"></th>
+                              <th>Question</th>
+                              <th>Created At</th>
+                              <th>Action</th>
+                          </tr>
+                          <tr>
+                            <td colspan="4">
+                                <div class="row">
+                                  <div class="col-6">
+                                    <a class="btn btn-default btn-xs bulk_delete">Bulk Delete</a>
+                                  </div>
+                                  <div class="col-6">
+                                    <form id="datatable_search" method="GET">
+                                        <input type="hidden" name="user_type" value="user">
+                                        <div class="input-group mb-3">
+                                          <input type="text" placeholder="Search..." name="keyword" class="form-control">
+                                          <div class="input-group-append">
+                                            <button class="btn btn-info"><i class="fa fa-search"></i></button>
+                                          </div>
+                                        </div>
+                                    </form>
+                                  </div>
+                                <div>
+                            </td>
+                          </tr>
+                      </thead>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    @include('admin.footer')
+  </section>
+  @section('scripts')
+    <script>
+      let ajax_listing_url = "{{ route('admin.faq.ajaxlsiting') }}";
+    </script>
+    <script src="/admin/assets/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="/admin/assets/lib/datatables/dataTables.responsive.min.js"></script>
+    <script src="/admin/assets/js/ajax-datatable.js"></script>
+  @endsection
+@endsection

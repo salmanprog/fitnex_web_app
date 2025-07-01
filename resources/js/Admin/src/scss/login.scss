@@ -1,0 +1,146 @@
+//  in this we will customize libraries components
+
+.login {
+    height: 100vh;
+    background: #3d3d3d;
+
+    label {
+        color: #fff !important;
+        font-size: 15px !important;
+    }
+
+    .ant-form-item-control-input-content {
+        button {
+            background: #b77700 !important;
+            width: fit-content;
+            padding: 0 40px;
+            font-size: 14px;
+            /* display: flex; */
+            /* align-items: center; */
+            justify-content: center;
+            color: #000;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+    }
+}
+
+.ant-form-item-label {
+
+    padding: 0 !important;
+
+}
+
+
+.login .ant-input {
+    height: 40px;
+    background-color: grey;
+    border: 0;
+    color: #fff;
+
+
+}
+
+.ant-input-suffix {
+    svg {
+        color: #fff !important;
+    }
+}
+
+.ant-input-affix-wrapper {
+    padding: 0 10px;
+    background: grey;
+    border: 0;
+}
+
+
+
+
+
+.w-35 {
+    width: 35%;
+}
+
+.logo {
+    img {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+.small,
+small {
+    font-size: 105% !important;
+}
+
+.widget {
+    margin-top: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    padding: 15px;
+    border: 0;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+    box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+}
+
+.white-bg {
+    background: #ffffff;
+}
+
+.main-content {
+    padding: 0px 30px 30px 30px;
+    position: relative;
+}
+
+.bg-primary {
+    background-color: #343a40 !important;
+    color: #fff;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.card-body {
+    height: 280px;
+    overflow-y: auto;
+}
+
+.card-body .ant-list-item {
+    padding: 6px 0 5px 3px;
+}
+
+#update-user label,
+#change-password label {
+    color: #000 !important;
+}
+
+#update-user .ant-input,
+#change-password .ant-input {
+    height: 40px !important;
+}
+
+.badge-info {
+    color: #fff;
+    background-color: #343a40 !important;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.badge-warning {
+    background: transparent;
+    margin-left: 12px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.demo-grid-block h6 {
+    margin: 0;
+}
+
+.ant-btn-primary {
+    background-color: #343a40 !important;
+}

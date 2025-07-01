@@ -1,0 +1,42 @@
+@layout('admin/master')
+@section('content')
+  <section class="main-content">
+    <div class="row">
+        <div class="col-sm-12">
+            @include('admin/flash-message')
+            <div class="card">
+                <div class="card-header card-default">
+                    Edit User
+                </div>
+                <div class="card-body">
+                  <form action="{{ route('admin.user.update',{id: record.slug }) + '?_method=PUT' }}" method="POST">
+                        {{ csrfField() }}
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select required name="status" class="form-control">
+                                <option {{ record.status == true ? 'selected' : '' }} value="1">Active</option>
+                                <option {{ record.status == false ? 'selected' : '' }} value="0">Disabled</option>
+                            </select>
+                        </div>
+                        @if( record.is_email_verify == 0 )
+                          <div class="form-group">
+                              <label>Email Verify</label>
+                              <select required name="is_email_verify" class="form-control">
+                                  <option value="0">Not Verified</option>
+                                  <option value="1">Verified</option>
+                              </select>
+                          </div>
+                        @endif
+                        <div class="form-group">
+                            <div class="buttons">
+                                <button class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @include('admin.footer')
+  </section>
+@endsection
